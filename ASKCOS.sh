@@ -2,7 +2,7 @@
 
 set -e  # Exit on any error
 
-ASKCOS_DIR="$HOME/$USER/work/ASKCOSv2"
+ASKCOS_DIR="$HOME/work/ASKCOSv2"
 CORE_REPO="git@gitlab.com:mlpds_mit/askcosv2/askcos2_core.git"
 
 sudo apt install make
