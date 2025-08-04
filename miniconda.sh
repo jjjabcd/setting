@@ -25,4 +25,4 @@ echo "== Step 4: Initialize conda in .bashrc =="
 eval "$($INSTALL_PATH/bin/conda shell.bash hook)"
 conda init bash
 
-source ~/.bashrc
+echo "== Step 5: source ~/.bashrc ==""
