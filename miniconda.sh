@@ -19,7 +19,7 @@ echo "== Step 2: Make installer executable =="
 chmod +x "$INSTALLER"
 
 echo "== Step 3: Install Miniconda (no prompt) =="
-bash "$INSTALLER" -b -p "$INSTALL_PATH"
+bash "$INSTALLER" -b -p "$INSTALL_PATH" -u
 
 echo "== Step 4: Initialize conda in .bashrc =="
 eval "$($INSTALL_PATH/bin/conda shell.bash hook)"
