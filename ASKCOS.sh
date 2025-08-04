@@ -5,6 +5,9 @@ set -e  # Exit on any error
 ASKCOS_DIR="$HOME/$USER/work/ASKCOSv2"
 CORE_REPO="git@gitlab.com:mlpds_mit/askcosv2/askcos2_core.git"
 
+sudo apt install make
+pip install PyYAML
+
 echo "== Step 1: Create ASKCOS root directory if not exists =="
 mkdir -p "$ASKCOS_DIR"
 cd "$ASKCOS_DIR"
