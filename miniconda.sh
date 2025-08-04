@@ -2,25 +2,27 @@
 
 set -e  # Exit on any error
 
-INSTALLER=Miniconda3-latest-Linux-x86_64.sh
-INSTALLER_FILEPATH = "$Home/work/"
+INSTALLER="Miniconda3-latest-Linux-x86_64.sh"
+DOWNLOAD_DIR="$HOME/work"
+INSTALLER_PATH="$DOWNLOAD_DIR/$INSTALLER"
 INSTALL_PATH="$HOME/work/miniconda"
 
-echo "== Step 0: Create target install path if not exists =="
+echo "== Step 0: Create target directories if not exists =="
+mkdir -p "$DOWNLOAD_DIR"
 mkdir -p "$INSTALL_PATH"
 
 echo "== Step 1: Download Miniconda installer =="
-wget -nc https://repo.anaconda.com/miniconda/$INSTALLER_FILEPATH
+cd "$DOWNLOAD_DIR"
+wget -nc "https://repo.anaconda.com/miniconda/$INSTALLER"
 
 echo "== Step 2: Make installer executable =="
-chmod +x $INSTALLER_FILEPATH
+chmod +x "$INSTALLER"
 
 echo "== Step 3: Install Miniconda (no prompt) =="
-bash ./$INSTALLER -b -p "$INSTALL_PATH"
+bash "$INSTALLER" -b -p "$INSTALL_PATH"
 
 echo "== Step 4: Initialize conda in .bashrc =="
 eval "$($INSTALL_PATH/bin/conda shell.bash hook)"
 conda init bash
 
-echo "== Miniconda installation complete =="
-echo "Please restart your shell or run 'source ~/.bashrc'"
+source ~/.bashrc
