@@ -2,7 +2,7 @@
 
 set -e  # Exit on any error
 
-ASKCOS_DIR="$HOME/ASKCOSv2"
+ASKCOS_DIR="$HOME/$USER/work/ASKCOSv2"
 CORE_REPO="git@gitlab.com:mlpds_mit/askcosv2/askcos2_core.git"
 
 echo "== Step 1: Create ASKCOS root directory if not exists =="
